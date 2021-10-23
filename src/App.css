@@ -2,4 +2,10 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
+}
+html {
+  min-height: 100vh;
+  background-color: #f6f9fc;
+  padding-top: 6rem;
 }

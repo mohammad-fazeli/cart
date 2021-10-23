@@ -1,9 +1,7 @@
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import apiMiddleware from "./middleware";
+import ProductReducer from "./reducer/ProductReducer";
 
-const fakeReducer = (state = { name: "FakeName" }, action) => {
-  return state;
-};
-
-const store = createStore(fakeReducer);
+const store = createStore(ProductReducer, applyMiddleware(apiMiddleware));
 
 export default store;
