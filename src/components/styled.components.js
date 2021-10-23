@@ -47,3 +47,24 @@ export const HeaderStyle = styled.header`
     }
   }
 `;
+
+export const ButtonStyle = styled.div`
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  span {
+    margin: 0 5px;
+    font-size: 1.3rem;
+  }
+  button {
+    border: 1px solid #d23f57;
+    outline: none;
+    color: #fff;
+    padding: 0.2rem 0.6rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-size: 1.3rem;
+    background: #d23f57;
+    border-radius: 5px;
+  }
+`;

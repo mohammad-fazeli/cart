@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Postitemstyle } from "./styled.components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-
+import Button from "../../components/Button";
 const ProductItem = ({
   model,
   Rated,
@@ -10,6 +11,7 @@ const ProductItem = ({
   Discount,
   availability,
   image,
+  id,
 }) => {
   const [Oprice, setOprice] = useState(0);
   useEffect(() => {
@@ -22,9 +24,14 @@ const ProductItem = ({
   return (
     <Postitemstyle>
       {Discount === 0 ? null : <div className="discount">{Discount}%</div>}
-      <img src={image} alt="" />
+      <Link to={`/product/${id}`}>
+        <img src={image} alt="" />
+      </Link>
       <div className="text">
-        <div className="model">{model}</div>
+        <Link to={`/product/${id}`}>
+          <div className="model">{model}</div>
+        </Link>
+
         <div className="reted">
           <FontAwesomeIcon icon={faStar} className="star" />
           {Rated}
@@ -34,11 +41,7 @@ const ProductItem = ({
           {Discount !== 0 ? <span>{Oprice}</span> : null}
         </div>
       </div>
-      <div className="btns">
-        <button>-</button>
-        <span>0</span>
-        <button>+ </button>
-      </div>
+      <Button id={id} className="btn" />
     </Postitemstyle>
   );
 };

@@ -12,7 +12,8 @@ const ProductList = ({ products }) => {
           price={product.price}
           Discount={product.Discount}
           availability={product.availability}
-          image={product.images[0]}
+          image={product.images[0].original}
+          id={product.id}
         />
       ))}
     </PostListStyle>

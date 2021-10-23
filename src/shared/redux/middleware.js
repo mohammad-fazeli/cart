@@ -28,7 +28,7 @@ const apiMiddleware = (store) => (next) => (action) => {
       .then((response) => handleSuccess({ response, type: successType, next }))
       .catch((error) => handleFailed({ error, type: failedType, next }));
   } else {
-    next(action);
+    next({ id: action.id, type: action.type });
   }
 };
 

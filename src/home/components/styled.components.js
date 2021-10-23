@@ -18,6 +18,15 @@ export const Postitemstyle = styled.div`
     padding: 0.1rem 0;
     border-radius: 5px;
   }
+  .Button {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
   img {
     width: 240px;
     height: 240px;
@@ -45,27 +54,6 @@ export const Postitemstyle = styled.div`
         color: #c4c4c4;
         text-decoration: line-through;
       }
-    }
-  }
-  .btns {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    span {
-      margin: 3px 0;
-      font-weight: 600;
-    }
-    button {
-      background: none;
-      outline: none;
-      border: 2px solid #d23f57;
-      border-radius: 5px;
-      width: 1.5rem;
-      height: 1.5rem;
-      cursor: pointer;
     }
   }
 `;
