@@ -16,7 +16,6 @@ export const ProductItemStayle = styled.div`
   }
   @media screen and (max-width: 850px) {
     width: 100%;
-    margin: 0 auto;
   }
   .container {
     font-size: 1.3rem;
