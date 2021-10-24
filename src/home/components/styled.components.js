@@ -64,4 +64,13 @@ export const PostListStyle = styled.div`
   grid-row-gap: 20px;
   grid-column-gap: 20px;
   justify-content: center;
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: auto auto auto;
+  }
+  @media screen and (max-width: 850px) {
+    grid-template-columns: auto auto;
+  }
+  @media screen and (max-width: 550px) {
+    grid-template-columns: auto;
+  }
 `;

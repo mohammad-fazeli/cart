@@ -6,6 +6,7 @@ export const ProductStyles = styled.div`
   grid-column-gap: 3rem;
   justify-content: center;
   align-items: flex-start;
+
   .img-s {
     width: 500px;
   }
@@ -40,6 +41,28 @@ export const ProductStyles = styled.div`
         color: #c4c4c4;
         text-decoration: line-through;
       }
+    }
+  }
+  @media screen and (max-width: 850px) {
+    grid-template-columns: auto;
+
+    .img-s {
+      width: 100%;
+    }
+    .Information {
+      width: 100%;
+      text-align: center;
+    }
+    .Button {
+      justify-content: center;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .img-s {
+      width: 400px;
+    }
+    .Information {
+      width: 400px;
     }
   }
 `;

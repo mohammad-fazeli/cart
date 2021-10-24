@@ -13,6 +13,9 @@ export const HeaderStyle = styled.header`
   justify-content: space-between;
   padding: 0 10rem;
   align-items: center;
+  @media screen and (max-width: 850px) {
+    padding: 0 1rem;
+  }
   .logo {
     background: #f3f5f9;
     width: 7rem;

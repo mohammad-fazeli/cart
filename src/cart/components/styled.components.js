@@ -11,6 +11,13 @@ export const ProductItemStayle = styled.div`
   align-items: flex-end;
   margin-bottom: 1rem;
   padding: 0 0.5rem;
+  @media screen and (max-width: 1200px) {
+    width: 35rem;
+  }
+  @media screen and (max-width: 850px) {
+    width: 100%;
+    margin: 0 auto;
+  }
   .container {
     font-size: 1.3rem;
     color: #373f50;
@@ -46,6 +53,10 @@ export const CartContainerStyle = styled.div`
   grid-column-gap: 2rem;
   justify-content: center;
   align-items: flex-start;
+  @media screen and (max-width: 850px) {
+    grid-template-columns: auto;
+    grid-row-gap: 2rem;
+  }
   .empty-Cart {
     text-align: center;
     position: absolute;
@@ -69,6 +80,9 @@ export const FormStyle = styled.div`
   border-radius: 12px;
   padding: 0.5rem 1rem;
   font-size: 1.3rem;
+  @media screen and (max-width: 850px) {
+    width: 100%;
+  }
   .totalContainer {
     display: flex;
     justify-content: space-between;
