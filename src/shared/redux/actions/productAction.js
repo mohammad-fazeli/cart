@@ -38,6 +38,12 @@ export const clearCartProducts = () => {
   };
 };
 
+export const loadeCart = () => {
+  return {
+    type: Types.LOADE_CART_PRODUCTS,
+  };
+};
+
 export const addCart = (id) => {
   return {
     type: Types.ADD_TO_CART,

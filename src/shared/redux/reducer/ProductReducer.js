@@ -66,6 +66,13 @@ const ProductReducer = (state = initState, action) => {
         cartProducts: [],
       };
 
+    case Types.LOADE_CART_PRODUCTS:
+      if (localStorage.getItem("cart") === null) {
+        localStorage.setItem("cart", "[]");
+      } else {
+        return { ...state, cart: JSON.parse(localStorage.getItem("cart")) };
+      }
+      return state;
     case Types.ADD_TO_CART:
       const equ = (id, array) => {
         const r = array.filter((a) => a.id === id);
@@ -81,8 +88,13 @@ const ProductReducer = (state = initState, action) => {
           }
           return a;
         });
+        localStorage.setItem("cart", JSON.stringify(newCart));
         return { ...state, cart: newCart };
       } else {
+        localStorage.setItem(
+          "cart",
+          JSON.stringify([...state.cart, { id: action.id, count: 1 }])
+        );
         return { ...state, cart: [...state.cart, { id: action.id, count: 1 }] };
       }
     case Types.REMOVE_AT_CART:
@@ -95,6 +107,11 @@ const ProductReducer = (state = initState, action) => {
         });
         return newc.filter((r) => r.count !== 0);
       };
+      localStorage.setItem(
+        "cart",
+        JSON.stringify(remove(action.id, state.cart))
+      );
+
       return {
         ...state,
         cart: remove(action.id, state.cart),
