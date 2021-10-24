@@ -4,7 +4,7 @@ import { addCart, removeCart } from "../shared/redux/actions/productAction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusSquare, faMinusSquare } from "@fortawesome/free-solid-svg-icons";
 
-const Button = ({ cart, id, text = "", addCart, removeCart }) => {
+const Button = ({ cart, id, text = "", addCart, removeCart, availability }) => {
   const [count, setcount] = useState(0);
   useEffect(() => {
     setcount(0);
@@ -20,11 +20,19 @@ const Button = ({ cart, id, text = "", addCart, removeCart }) => {
     <div className="Button">
       {count === 0 ? (
         text === "" ? (
-          <button className="btn-icon" onClick={() => addCart(id)}>
+          <button
+            disabled={availability === "Not available"}
+            className="btn-icon"
+            onClick={() => addCart(id)}
+          >
             <FontAwesomeIcon icon={faPlusSquare} />
           </button>
         ) : (
-          <button className="btn-text" onClick={() => addCart(id)}>
+          <button
+            disabled={availability === "Not available"}
+            className="btn-text"
+            onClick={() => addCart(id)}
+          >
             {text}
           </button>
         )
@@ -35,7 +43,11 @@ const Button = ({ cart, id, text = "", addCart, removeCart }) => {
             <FontAwesomeIcon icon={faMinusSquare} />
           </button>
           <span>{count}</span>
-          <button className="btn-icon" onClick={() => addCart(id)}>
+          <button
+            disabled={availability === "Not available"}
+            className="btn-icon"
+            onClick={() => addCart(id)}
+          >
             <FontAwesomeIcon icon={faPlusSquare} />
           </button>
         </>

@@ -41,7 +41,7 @@ const ProductItem = ({
           {Discount !== 0 ? <span>{Oprice}</span> : null}
         </div>
       </div>
-      <Button id={id} className="btn" />
+      <Button id={id} availability={availability} className="btn" />
     </Postitemstyle>
   );
 };

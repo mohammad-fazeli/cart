@@ -34,7 +34,7 @@ const Information = ({
       <div className="availability">
         {availability === "Available" ? "Available" : ""}
       </div>
-      <Button id={id} text="Add to Cart" />
+      <Button id={id} availability={availability} text="Add to Cart" />
     </div>
   );
 };

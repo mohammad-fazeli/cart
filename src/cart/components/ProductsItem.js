@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ProductItemStayle } from "./styled.components";
 import Button from "../../components/Button";
 
-const ProductsItem = ({ id, model, price, image, cart }) => {
+const ProductsItem = ({ id, model, price, image, cart, availability }) => {
   const [count, setCount] = useState(0);
   useEffect(() => {
     // eslint-disable-next-line array-callback-return
@@ -24,7 +24,7 @@ const ProductsItem = ({ id, model, price, image, cart }) => {
           </div>
         </div>
       </div>
-      <Button id={id} />
+      <Button id={id} availability={availability} />
     </ProductItemStayle>
   );
 };
