@@ -46,7 +46,7 @@ export const CartContainerStyle = styled.div`
   grid-column-gap: 2rem;
   justify-content: center;
   align-items: flex-start;
-  div {
+  .empty-Cart {
     text-align: center;
     position: absolute;
     top: 50%;
