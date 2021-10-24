@@ -42,7 +42,7 @@ const CartContainer = ({
           cart={cart}
         />
       ) : (
-        <div>
+        <div className="empty-Cart">
           <h1>The cart is empty.</h1>
           <Link to="/">
             <h2>Go to the products page</h2>
