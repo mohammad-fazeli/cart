@@ -4,6 +4,7 @@ import {
   fetchCartProducts,
   clearCartProducts,
 } from "../shared/redux/actions/productAction";
+import { Link } from "react-router-dom";
 import Checkout from "./components/Checkout";
 import ProductsList from "./components/ProductsList";
 import { CartContainerStyle } from "./components/styled.components";
@@ -41,7 +42,12 @@ const CartContainer = ({
           cart={cart}
         />
       ) : (
-        ""
+        <div>
+          <h1>The cart is empty.</h1>
+          <Link to="/">
+            <h2>Go to the products page</h2>
+          </Link>
+        </div>
       )}
     </CartContainerStyle>
   );

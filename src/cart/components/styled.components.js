@@ -46,6 +46,20 @@ export const CartContainerStyle = styled.div`
   grid-column-gap: 2rem;
   justify-content: center;
   align-items: flex-start;
+  div {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h2 {
+      margin-top: 2rem;
+      background: #d23f57;
+      color: #fff;
+      padding: 1rem 1rem;
+      border-radius: 12px;
+    }
+  }
 `;
 
 export const FormStyle = styled.div`
