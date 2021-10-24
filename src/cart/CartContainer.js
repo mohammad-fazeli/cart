@@ -29,7 +29,7 @@ const CartContainer = ({
         clearCartProducts();
       }
     }
-  }, [fetchCartProducts, cart, clearCartProducts]);
+  }, [fetchCartProducts, cart, clearCartProducts, cartProducts.length]);
 
   return (
     <CartContainerStyle>
