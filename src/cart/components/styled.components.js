@@ -55,42 +55,44 @@ export const FormStyle = styled.div`
   border-radius: 12px;
   padding: 0.5rem 1rem;
   font-size: 1.3rem;
-  div {
+  .totalContainer {
     display: flex;
     justify-content: space-between;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid #c4c4c4;
-    .totoal {
+    .total {
       color: #c4c4c4;
     }
   }
-  form {
-    margin-top: 1rem;
+  div {
     input,
     textarea {
-      margin-bottom: 0.7rem;
+      width: 100%;
       border: 1px solid #c4c4c4;
-      outline: none;
       font-size: 1rem;
-      padding: 5px 5px;
-      width: 100%;
+      padding: 0.2rem 0.4rem;
+      margin-top: 1.3rem;
+      border-radius: 4px;
     }
-    input::placeholder,
-    textarea::placeholder {
-      color: #c4c4c4;
-      font-size: 0.9rem;
-      letter-spacing: 1px;
+    textarea {
+      height: 7rem;
     }
-    button {
-      background: #d23f57;
-      border-radius: 5px;
-      width: 100%;
-      color: #fff;
-      border: none;
-      outline: none;
-      padding: 0.7rem 0;
-      font-size: 1.3rem;
-      cursor: pointer;
-    }
+  }
+  button {
+    background: #d23f57;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 0.4rem 0;
+    margin-top: 1.3rem;
+  }
+  .error {
+    color: #d23f57;
+    position: absolute;
+    font-size: 1rem;
   }
 `;

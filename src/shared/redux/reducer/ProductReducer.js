@@ -61,8 +61,11 @@ const ProductReducer = (state = initState, action) => {
         error: action.error,
       };
     case Types.CLEAR_CART_PRODUCTS:
+      localStorage.setItem("cart", JSON.stringify([]));
+
       return {
         ...state,
+        cart: [],
         cartProducts: [],
       };
 

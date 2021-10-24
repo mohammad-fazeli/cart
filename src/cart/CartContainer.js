@@ -4,7 +4,7 @@ import {
   fetchCartProducts,
   clearCartProducts,
 } from "../shared/redux/actions/productAction";
-import Form from "./components/Form";
+import Checkout from "./components/Checkout";
 import ProductsList from "./components/ProductsList";
 import { CartContainerStyle } from "./components/styled.components";
 
@@ -25,14 +25,24 @@ const CartContainer = ({
     if (QueryParameters !== "?") {
       fetchCartProducts(QueryParameters);
     } else {
-      clearCartProducts();
+      if (cartProducts.length !== 0) {
+        clearCartProducts();
+      }
     }
   }, [fetchCartProducts, cart, clearCartProducts]);
 
   return (
     <CartContainerStyle>
       <ProductsList cart={cart} products={cartProducts} />
-      {cart.length !== 0 ? <Form products={cartProducts} cart={cart} /> : ""}
+      {cart.length !== 0 ? (
+        <Checkout
+          clearCartProducts={clearCartProducts}
+          products={cartProducts}
+          cart={cart}
+        />
+      ) : (
+        ""
+      )}
     </CartContainerStyle>
   );
 };
