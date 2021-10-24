@@ -4,6 +4,7 @@ const initState = {
   products: [],
   product: {},
   cart: [],
+  cartProducts: [],
   fetching: false,
   error: null,
 };
@@ -47,6 +48,24 @@ const ProductReducer = (state = initState, action) => {
         fetching: false,
         error: action.error,
       };
+    case Types.FETCH_CART_PRODUCTS:
+      return {
+        ...state,
+        fetching: true,
+      };
+    case Types.FETCH_CART_PRODUCTS_SUCCESS:
+      return { ...state, cartProducts: action.data };
+    case Types.FETCH_CART_PRODUCTS_FAILED:
+      return {
+        ...state,
+        error: action.error,
+      };
+    case Types.CLEAR_CART_PRODUCTS:
+      return {
+        ...state,
+        cartProducts: [],
+      };
+
     case Types.ADD_TO_CART:
       const equ = (id, array) => {
         const r = array.filter((a) => a.id === id);
