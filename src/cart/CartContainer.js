@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import {
-  fetchCartProducts,
-  clearCartProducts,
-} from "../shared/redux/actions/productAction";
+import { fetchCartProducts, clearCartProducts } from "./actions/cartAction";
 import { Link } from "react-router-dom";
 import Checkout from "./components/Checkout";
 import ProductsList from "./components/ProductsList";
@@ -53,8 +50,8 @@ const CartContainer = ({
   );
 };
 
-const mapStateToProps = ({ cart, cartProducts }) => {
-  return { cart, cartProducts };
+const mapStateToProps = ({ Cart }) => {
+  return { cart: Cart.cart, cartProducts: Cart.cartProducts };
 };
 
 const mapDispatchToProps = {

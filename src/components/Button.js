@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { addCart, removeCart } from "../shared/redux/actions/productAction";
+import { addCart, removeCart } from "../cart/actions/cartAction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusSquare, faMinusSquare } from "@fortawesome/free-solid-svg-icons";
 
@@ -55,8 +55,8 @@ const Button = ({ cart, id, text = "", addCart, removeCart, availability }) => {
     </div>
   );
 };
-const mapStateToProps = ({ cart }) => {
-  return { cart };
+const mapStateToProps = ({ Cart }) => {
+  return { cart: Cart.cart };
 };
 
 const mapDispatchToProps = {

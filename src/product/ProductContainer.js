@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { fetchProduct } from "../shared/redux/actions/productAction";
+import { fetchProduct } from "./actions/productAction";
 import ImageGallery from "react-image-gallery";
 import { ProductStyles } from "./components/styled.components";
 import Information from "./components/Information";
@@ -38,8 +38,8 @@ const ProductContainer = ({ match, fetchProduct, product }) => {
     </ProductStyles>
   );
 };
-const mapStateToProps = ({ product }) => {
-  return { product };
+const mapStateToProps = ({ Product }) => {
+  return { product: Product.product };
 };
 
 const mapDispatchToProps = {

@@ -21,8 +21,8 @@ const Header = ({ cart }) => {
   );
 };
 
-const mapStateToProps = ({ cart }) => {
-  return { cart };
+const mapStateToProps = ({ Cart }) => {
+  return { cart: Cart.cart };
 };
 
 const mapDispatchToProps = {};

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchProducts } from "../shared/redux/actions/productAction";
+import { fetchProducts } from "./actions/homeAction";
 import ProductList from "./components/ProductList";
 
-const HomeContainer = ({ fetchProducts, products }) => {
+const HomeContainer = ({ fetchProducts, products = [] }) => {
   useEffect(() => {
     fetchProducts();
   }, [fetchProducts]);
@@ -14,8 +14,8 @@ const HomeContainer = ({ fetchProducts, products }) => {
   );
 };
 
-const mapStateToProps = ({ products }) => {
-  return { products };
+const mapStateToProps = ({ Home }) => {
+  return { products: Home.products };
 };
 
 const mapDispatchToProps = {
