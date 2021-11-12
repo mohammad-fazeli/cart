@@ -23,7 +23,7 @@ const Checkout = ({ products, cart, clearCartProducts }) => {
       .max(150, "Must be 150 characters or less")
       .required("address is required"),
   });
-  const [totoal, setTotal] = useState(0);
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     setTotal(0);
@@ -44,8 +44,8 @@ const Checkout = ({ products, cart, clearCartProducts }) => {
   return (
     <FormStyle>
       <div className="totalContainer">
-        <span className="total">totoal:</span>
-        <span>${totoal}</span>
+        <span className="total">total:</span>
+        <span>${total}</span>
       </div>
       <Formik
         initialValues={{
