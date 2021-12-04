@@ -9,7 +9,7 @@ const LoadCart = () => {
   const cart = localStorage.getItem("cart");
   return {
     Cart: {
-      cart: JSON.parse(cart),
+      cart: cart === null ? [] : JSON.parse(cart),
       cartProducts: [],
       error: null,
       fetching: false,
@@ -26,7 +26,8 @@ const store = createStore(
   LoadCart(),
   applyMiddleware(apiMiddleware)
 );
-store.subscribe((a) => {
+
+store.subscribe(() => {
   const { cart } = store.getState().Cart;
   localStorage.setItem("cart", JSON.stringify(cart));
 });
